@@ -14,19 +14,20 @@
 }
 :root {
   --basic-black: #000000;
-  --basic-grey: #F2F2F2;
-  --special-grey: #CDCDCD;
-  --special-grey-2: #EBEBEB;
-  --special-grey-3: #EAEAEA;
-  --special-light-grey: #E7E7E7;
-  --special-light-grey-2: #D9D9D9;
+  --basic-grey: #f2f2f2;
+  --special-grey: #cdcdcd;
+  --special-grey-2: #ebebeb;
+  --special-grey-3: #eaeaea;
+  --special-light-grey: #e7e7e7;
+  --special-light-grey-2: #d9d9d9;
+  --special-light-grey-3: #e6e6e6;
   --special-dark-grey: #444444;
   --special-dark-grey-2: #222222;
   --special-dark-grey-3: #111111;
   --basic-white: #ffffff;
-  --basic-green: #68B738;
-  --basic-green-2: #5EAA2F;
-  --status-error: #FF8282;
+  --basic-green: #68b738;
+  --basic-green-2: #5eaa2f;
+  --status-error: #ff8282;
 }
 
 .visually-hidden {
@@ -48,7 +49,7 @@
 }
 
 .button {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -61,13 +62,34 @@
   background-color: var(--basic-green);
 }
 
-.main-header {
+.header {
   color: var(--basic-black);
   background-color: var(--basic-white);
+  padding-top: 10px;
+  position: relative;
 }
 
-.main-header__main-logo {
+.header__main-logo {
   display: inline-block;
+  margin-right: 56px;
+  margin-left: 20px;
+  margin-bottom: 18px;
+}
+
+.header__second-logo {
+  display: inline-block;
+}
+
+.nav__toggle {
+  position: absolute;
+  top: 24px;
+  right: 20px;
+  width: 24px;
+  height: 18px;
+  background-image: url("../img/toggle.svg");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
 }
 
 .menu-list {
@@ -79,11 +101,30 @@
   color: var(--basic-black);
   text-transform: uppercase;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
   padding: 0;
 }
 
+.menu-list__item {
+  padding-top: 22px;
+  padding-bottom: 24px;
+  position: relative;
+}
+.menu-list__item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background-color: var(--special-light-grey-3);
+  top: 0;
+}
+
 .menu-list__link {
+  display: block;
   text-decoration: none;
+  text-align: center;
 }
 
 .main-container {
@@ -94,7 +135,7 @@
 }
 
 .main-container__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -105,7 +146,7 @@
 }
 
 .main-container__description {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -121,27 +162,28 @@
 }
 
 .promoscreen__wrapper {
-  width: 320px;
-  height: 302px;
+  min-height: 275px;
   background-image: linear-gradient(rgba(104, 183, 56, 0.85), rgba(104, 183, 56, 0.85)), url("../img/hero.jpg");
   background-position: top;
   background-repeat: repeat, no-repeat;
   background-size: cover;
-  padding-bottom: 27px;
+  padding-top: 27px;
 }
 
 .promoscreen__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
   text-align: center;
   color: var(--basic-white);
+  margin: 0;
+  margin-bottom: 25px;
 }
 
 .promoscreen__subtitle {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -185,18 +227,18 @@
   padding-bottom: 18px;
 }
 .category__item--weight-loss {
-  background-image: url(../img/cat_back.svg);
+  background-image: url("../img/cat_back.svg");
   background-repeat: no-repeat;
   background-position: top 21px left 21px;
 }
 .category__item--weight-gain {
-  background-image: url(../img/cat_gain.svg);
+  background-image: url("../img/cat_gain.svg");
   background-repeat: no-repeat;
   background-position: top 21px left 11px;
 }
 
 .category__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -210,7 +252,7 @@
 }
 
 .category__description {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -224,7 +266,7 @@
 .category__link {
   display: block;
   position: relative;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -253,7 +295,7 @@
 }
 
 .advantages__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -269,7 +311,7 @@
 }
 
 .advantages__item {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -284,7 +326,7 @@
 }
 
 .example__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -296,7 +338,7 @@
 }
 
 .example__description {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -306,21 +348,21 @@
   margin-bottom: 20px;
 }
 
-.stats {
+.example__stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: var(--special-grey-3);
   margin: 0;
 }
 
-.stats__item {
+.example__stats-item {
   display: grid;
   grid-template-rows: min-content min-content;
   margin-bottom: 20px;
 }
 
-.stats__number {
-  font-family: "Oswald";
+.example__stats-number {
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -331,8 +373,8 @@
   margin-bottom: 5px;
 }
 
-.stats__description {
-  font-family: "Arial";
+.example__stats-description {
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -344,7 +386,7 @@
 }
 
 .example__summary {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -358,23 +400,43 @@
   background-color: var(--basic-white);
 }
 
+.contacts__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 26px 20px;
+}
+
 .contacts__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   text-transform: uppercase;
   color: var(--special-dark-grey-3);
+  margin: 0;
 }
 
-.address {
-  font-family: "Arial";
+.contacts__address {
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
   color: var(--special-dark-grey);
+  margin: 0;
+}
+
+.contacts__address-street {
+  margin: 0;
+}
+
+.contacts__address-city {
+  margin: 0;
+}
+
+.map__image {
+  display: inline-block;
 }
 
 .catalog {
@@ -382,7 +444,7 @@
 }
 
 .catalog__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
@@ -398,26 +460,23 @@
   padding: 0;
 }
 
-.product {
-  background-color: var(--basic-white);
-  border-top: 1px solid #D9D9D9;
+.products__item {
   margin: 0;
-  padding-top: 19px;
-  padding-bottom: 25px;
-  box-sizing: border-box;
 }
 
-.products__item {
+.product {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: min-content min-content auto;
   align-items: center;
-  margin: 0;
+  background-color: var(--basic-white);
+  border-top: 1px solid var(--special-light-grey-2);
   padding: 19px 20px 25px;
+  box-sizing: border-box;
 }
 
 .product__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -437,7 +496,7 @@
 }
 
 .product__features {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -478,7 +537,7 @@
 }
 
 .product-more__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -491,7 +550,7 @@
 }
 
 .product-more__description {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
@@ -516,7 +575,7 @@
 }
 
 .additional__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -536,14 +595,14 @@
   display: grid;
   grid-template-rows: repeat(3, auto);
   padding: 13px 20px 21px;
-  border-top: 1px solid #D9D9D9;
+  border-top: 1px solid var(--special-light-grey-2);
 }
 .additional__item:last-child {
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 1px solid var(--special-light-grey-2);
 }
 
 .additional__item-title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -562,7 +621,7 @@
 }
 
 .additional__item-feature {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -573,7 +632,7 @@
 }
 
 .additional__item-price {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -599,7 +658,7 @@
   position: relative;
 }
 .promobox__wrapper::before {
-  content: url(../img/promobox-icon.svg);
+  content: url("../img/promobox-icon.svg");
   position: absolute;
   right: 0;
   left: 0;
@@ -613,7 +672,7 @@
 
 .promobox__description {
   width: 100%;
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -629,7 +688,7 @@
 }
 
 .form__description {
-  font-family: "Arial";
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -645,8 +704,8 @@
 }
 
 .form__program-selection {
-  border-top: 1px solid #D9D9D9;
-  border-bottom: 1px solid #D9D9D9;
+  border-top: 1px solid var(--special-light-grey-2);
+  border-bottom: 1px solid var(--special-light-grey-2);
   margin: 0;
   margin-bottom: 26px;
   padding-top: 22px;
@@ -682,7 +741,7 @@
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -706,7 +765,7 @@
 }
 
 .property__field::placeholder {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -722,7 +781,7 @@
 }
 
 .program-list__item {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -733,7 +792,7 @@
 }
 
 .own__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -747,7 +806,7 @@
   display: grid;
   grid-template-columns: max-content auto;
   align-items: center;
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -771,7 +830,7 @@
 }
 
 .own__field::placeholder {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -781,7 +840,7 @@
 }
 
 .comment__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -798,7 +857,7 @@
   padding-left: 12px;
 }
 .comment__textarea::placeholder {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -808,7 +867,7 @@
 }
 
 .options__title {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
@@ -824,7 +883,7 @@
 }
 
 .options__item {
-  font-family: "Oswald";
+  font-family: "Oswald", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
@@ -834,21 +893,64 @@
   margin-bottom: 12px;
 }
 
-.main-footer {
+.footer {
   background-color: var(--basic-grey);
+}
+
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.footer__logo {
+  padding-top: 39px;
+  padding-bottom: 32px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--special-light-grey-2);
 }
 
 .social__list {
   list-style-type: none;
   padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 21px;
+}
+
+.social__item {
+  margin-right: 20px;
+}
+
+.social__item:last-child {
+  margin-right: 0;
 }
 
 .copyright {
-  font-family: "Arial";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-top: 1px solid var(--special-light-grey-2);
+}
+
+.copyright__text {
+  font-family: "Arial", sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 18px;
   color: var(--special_dark-grey);
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
